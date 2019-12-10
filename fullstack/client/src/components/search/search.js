@@ -43,7 +43,7 @@ class Search extends React.Component {
         <div className="jumbotron text-center" style={{marginBottom: "0%"}}>
             <h1>Souvenir Guidebook</h1>
             <div>
-            <input type="text" onChange = {this.handleChange} onKeyPress={(target)=>{if(target.charCode==13){this.props.changeSearch(this.state.searchtext)}}} placeholder="anything in your mind...." aria-label="Search" className="form-control" style= {search_style}/>
+            <input type="text" onChange = {this.handleChange} onKeyPress={(target)=>{if(target.charCode===13){this.props.changeSearch(this.state.searchtext)}}} placeholder="anything in your mind...." aria-label="Search" className="form-control" style= {search_style}/>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button" onClick={()=>this.props.changeSearch(this.state.searchtext)} className="btn btn-success" style={{marginTop: "0%", marginBottom: "0%"}}>search</button>
             </div>

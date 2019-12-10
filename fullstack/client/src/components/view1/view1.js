@@ -42,7 +42,7 @@ class View1 extends React.Component {
         var three = filt[filtertype].search(filtername+",")
         var two = filt[filtertype].search(filtername)
         
-        console.log(two)
+        // console.log(two)
         if (one !== -1)
           filt[filtertype]=filt[filtertype].replace(","+filtername, "")
         else if (three !== -1)
@@ -56,8 +56,8 @@ class View1 extends React.Component {
       }
       // this.state.filter[filtertype] = filtername
       // this.state.refresh = !this.state.refresh
-      console.log(checked)
-      console.log(this.state.filter)
+      // console.log(checked)
+      // console.log(this.state.filter)
     }
 
     changeSearch(text) {
@@ -67,7 +67,7 @@ class View1 extends React.Component {
       })
       // this.state.searchtext = text;
       // this.state.refresh = !this.state.refresh
-      console.log(this.state.searchtext)
+      // console.log(this.state.searchtext)
     }
     
     render() {
