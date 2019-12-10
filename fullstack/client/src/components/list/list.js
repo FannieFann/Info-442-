@@ -19,15 +19,15 @@ class List extends React.Component {
         }
     }
     changePage (operation) {
-        console.log("Changing")
+        // console.log("Changing")
         const op = this.state.pagination[operation]
         this.setState({page_num: op})
     }
     changeOrder (od) {
         // alert(order)
-        console.log(this.state.order)
+        // console.log(this.state.order)
         this.setState({order: od})
-        console.log(this.state.order)
+        // console.log(this.state.order)
     }
     componentDidMount() {
         // console.log(this.context)
@@ -59,7 +59,7 @@ class List extends React.Component {
             if (search!=='')
                 basic_query+="&search_text="+search
 
-            console.log(basic_query)
+            // console.log(basic_query)
                 fetch(basic_query)
                 .then(res => res.json())
                 .then(json => {

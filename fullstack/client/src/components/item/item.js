@@ -1,10 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 // import ReactDOM from 'react-dom';
 // import * as serviceWorker from './serviceWorker';
 
 class Item extends React.Component {
-    
+    constructor() {
+        super()
+        this.state = {
+            redirect: false
+        }
+    }
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return (
+                <Redirect to={{
+                    pathname: '/view2',
+                    state: { id: this.props.id }
+                }} />
+            )
+        }
+    }
     render() {
     const parameters = {
         pathname: '/view2',
@@ -14,10 +29,9 @@ class Item extends React.Component {
     return (
             <div>
                 <div className="row">
-                    <div className="col-md-7">
-                        <a href=" ">
-                        <img className="img-fluid rounded mb-3 mb-md-0" src={img_url} alt="" width="100%" height="250px" />
-                        </a >
+                    {this.renderRedirect()}
+                    <div className="col-md-7">             
+                        <img className="img-fluid rounded mb-3 mb-md-0" src={img_url} onClick={()=>{this.setState({redirect: true})}} alt="" width="100%" height="250px" />
                     </div>
                     <div className="col-md-5">
                         <h3>{this.props.storename}</h3>
