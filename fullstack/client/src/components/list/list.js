@@ -56,10 +56,9 @@ class List extends React.Component {
             }
         
             
-            if (search!=='')
-                basic_query+="&search_text="+search
-
-            // console.log(basic_query)
+            if (search.length <= 500) {
+                if (search !== '')
+                    basic_query+="&search_text="+search
                 fetch(basic_query)
                 .then(res => res.json())
                 .then(json => {
@@ -68,7 +67,15 @@ class List extends React.Component {
                         items: json.data,
                         pagination: json.pagination
                     })
-            })   
+                })
+            }
+            else {
+                this.setState({
+                    isLoaded: true,
+                    items: [],
+                    pagination: []
+                })
+            }
         } 
             
         
