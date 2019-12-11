@@ -144,7 +144,7 @@ const forwhomTypeData = [
     },
     {
         id: 4,
-        name: "Seniors"
+        name: "Senior"
     },
     {
         id: 5,
