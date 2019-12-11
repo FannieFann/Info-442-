@@ -48,7 +48,10 @@ class List extends React.Component {
         // console.log("refresh: "+refresh)
         // console.log("p_refresh: "+prevProps.refresh)
         if (prevProps.refresh !== refresh || prevState.page_num!== this.state.page_num || prevState.order!== this.state.order) {
-            var basic_query = "http://localhost:3001/stores?page="+this.state.page_num+"&order_param="+this.state.order
+            var basic_query
+            if (prevProps.refresh!==refresh)
+                this.setState({page_num: 0})
+            basic_query = "http://localhost:3001/stores?page="+this.state.page_num+"&order_param="+this.state.order
             for (var i in Object.keys(filter)) {
                 if (filter[Object.keys(filter)[i]]!=='')
                     basic_query+="&"+Object.keys(filter)[i]+"="+filter[Object.keys(filter)[i]]
