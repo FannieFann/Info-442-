@@ -14,7 +14,7 @@ class Item extends React.Component {
         if (this.state.redirect) {
             return (
                 <Redirect to={{
-                    pathname: '/view2',
+                    pathname: '/view2/'+this.props.id,
                     state: { id: this.props.id }
                 }} />
             )
@@ -22,7 +22,7 @@ class Item extends React.Component {
     }
     render() {
     const parameters = {
-        pathname: '/view2',
+        pathname: '/view2/'+this.props.id,
         state: { id:  this.props.id}
     }
     const img_url = "http://localhost:3001/images/stores/Store_"+this.props.id +".jpg"

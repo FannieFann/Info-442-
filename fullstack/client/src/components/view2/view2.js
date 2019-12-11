@@ -34,7 +34,7 @@ class View2 extends React.Component {
         }
     }
     componentDidMount() {
-        fetch("http://localhost:3001/stores/" + this.props.location.state.id)
+        fetch("http://localhost:3001/stores/" + this.props.match.params.id)
         .then(res => res.json())
         .then(json => {
             this.setState({

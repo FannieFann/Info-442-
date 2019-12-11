@@ -12,7 +12,7 @@ class Menu extends React.Component {
                 <Switch>
                     <Route path="/" exact component = {Map}/>
                     <Route path="/view1" component = {View1}/>
-                    <Route path="/view2" component = {View2}/>
+                    <Route path="/view2/:id" component = {View2}/>
                 </Switch>
             </Router>
         )
