@@ -5,7 +5,10 @@ import filterData from '../filter/filterData.js'
 // import * as serviceWorker from './serviceWorker';
 
 class Filter extends React.Component {
-    dropdownComponents = filterData.map(filter => <Dropdown key = {filter.id} id = {filter.id} name = {filter.name} changeFilter = {this.props.changeFilter}/>)
+    constructor (props) {
+        super(props)
+        this.dropdownComponents = filterData.map(filter => <Dropdown key = {filter.id} id = {filter.id} name = {filter.name} changeFilter = {this.props.changeFilter}/>)
+    }
     render() {
     const filter_style = {
         marginLeft: "40%"
@@ -16,6 +19,7 @@ class Filter extends React.Component {
                                 {this.dropdownComponents}
                             <br/>
                         </div>
+                        
                         <br/>
                 </div>
     )

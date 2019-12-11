@@ -5,13 +5,14 @@ import Data from './dropdownData.js'
 // import * as serviceWorker from './serviceWorker';
 
 class Dropdown extends React.Component {
-    productComponents = Data.productTypeData.map(option => <Option key = {option.id} name = {option.name} type = "product_type" changeFilter = {this.props.changeFilter}/>)
-    themeComponents = Data.themeData.map(option => <Option key = {option.id} type = "theme" name = {option.name} changeFilter = {this.props.changeFilter}/>)
-    neighborhoodComponents = Data.neighborhoodTypeData.map(option => <Option key = {option.id} type = "neighborhood" name = {option.name} changeFilter = {this.props.changeFilter}/>)
-    forwhomComponents = Data.forwhomTypeData.map(option => <Option key = {option.id} type = "for_whom" name = {option.name} changeFilter = {this.props.changeFilter}/>)
-    changeList () {
-        this.props.filterkeyword = "Food"
+    constructor(props) {
+        super(props)
+        this.productComponents = Data.productTypeData.map(option => <Option key = {option.id} name = {option.name} type = "product_type" changeFilter = {this.props.changeFilter} />)
+        this.themeComponents = Data.themeData.map(option => <Option key = {option.id} type = "theme" name = {option.name} changeFilter = {this.props.changeFilter} />)
+        this.neighborhoodComponents = Data.neighborhoodTypeData.map(option => <Option key = {option.id} type = "neighborhood" name = {option.name} changeFilter = {this.props.changeFilter} />)
+        this.forwhomComponents = Data.forwhomTypeData.map(option => <Option key = {option.id} type = "for_whom" name = {option.name} changeFilter = {this.props.changeFilter} />)
     }
+    
     showOptions() {
         if (this.props.id === 1)
             return this.productComponents

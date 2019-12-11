@@ -19,7 +19,8 @@ class View1 extends React.Component {
         "for_whom": ""
         },
         searchtext: "",
-        refresh: false
+        refresh: false,
+        reset: false
       }
       // this.filter = 
       // this.searchtext = ""
@@ -78,6 +79,7 @@ class View1 extends React.Component {
         <div className={"container-fluid"}>
           <div className="row">
             <Filter changeFilter = {this.changeFilter}/>
+            
             <List refresh = {this.state.refresh} filter = {this.state.filter} search = {this.state.searchtext}/>
           </div>
             
